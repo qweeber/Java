@@ -20,11 +20,27 @@ public class Main {
 
             printWriter.close();
 
+            BufferedReader bufferedReader = new BufferedReader(new FileReader("date.txt"));
+
+            //System.out.println((char) bufferedReader.read());
+            //System.out.println(bufferedReader.readLine());
+
+            BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("base.txt"));
+            String content = "";
+            while ((content = bufferedReader.readLine()) != null){
+                //System.out.println(content);
+                bufferedWriter.write(content);
+                bufferedWriter.newLine();
+            }
+
+            bufferedWriter.close();
+            bufferedReader.close();
+
         }catch (IOException ex){
             System.out.println(ex.getMessage());
         }
 
-        Main.test(4,8,9, "dsf", "sdf", 99);
+        //Main.test(4,8,9, "dsf", "sdf", 99);
 
     }
 
